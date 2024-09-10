@@ -16,7 +16,7 @@ const Search = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       if (search.length >= 3) {
-        const movies = await fetchMoviesBySearchName(search);
+        const movies = await fetchMoviesBySearchName(search, '1');
         setSearchMovies(movies);
       } else {
         setSearchMovies({});
@@ -28,7 +28,7 @@ const Search = () => {
 
 
   return (
-    <div className='flex'>
+    <form action={`/search/${search}/page/1`} className='flex'>
       <input value={search} placeholder="Rechercher un film" onChange={(e) => setSearch(e.target.value)}></input>
         {
           searchMovies.results && searchMovies.results?.length >= 3 &&
@@ -38,7 +38,7 @@ const Search = () => {
               <Movie movie={searchMovies.results[2]}></Movie>
             </div>
         }
-    </div>
+    </form>
   )
 }
 

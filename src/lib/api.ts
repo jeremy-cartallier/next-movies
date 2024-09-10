@@ -11,7 +11,7 @@ const API_HEADERS = {
   Authorization: `Bearer ${API_TOKEN}`
 };
 
-export const fetchMoviesBySearchName = async (searchName: string, page = "1") => {
+export const fetchMoviesBySearchName = async (searchName: string, page: string) => {
   const url = `${API_PATH}search/movie?query=${searchName}&page=${page}&language=fr-FR&include_adult=false`;
   const options = {
     method: 'GET',

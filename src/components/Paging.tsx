@@ -4,7 +4,7 @@ type PagingProps = {
   "totalPages": number,
   "category": string,
   "page": string,
-  "type": 'category' | 'genre'
+  "type": 'category' | 'genre' | 'search'
 }
 
 const Paging:React.FC<PagingProps> = ({totalPages, category, page, type}) => {
@@ -12,8 +12,10 @@ const Paging:React.FC<PagingProps> = ({totalPages, category, page, type}) => {
   const getLinkHref = (newPage: number) => {
     if (type === "category") {
       return `/${category}/${newPage}`;
-    } else {
+    } else if (type === "genre") {
       return `/genre/${category}/page/${newPage}`;
+    } else {
+      return `/search/${category}/page/${newPage}`;
     }
   };
 
