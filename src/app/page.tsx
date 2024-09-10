@@ -1,11 +1,7 @@
-import Image from "next/image";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <>
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      test
-    </main>
-    </>
-  );
+const Home = () => {
+  redirect('/now_playing/1');
 }
+
+export default Home;
