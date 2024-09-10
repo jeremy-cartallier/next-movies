@@ -4,8 +4,7 @@ type Genre = {
 };
 
 const API_PATH = "https://api.themoviedb.org/3/"
-
-const API_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MGY1MmIxYmU0NTVlZjIxMTE5NzMyYWI1OGQyOWZhYiIsIm5iZiI6MTcyNTUwMzg5Mi4wODA4MjksInN1YiI6IjY2ZDdhZmFlMjI2NzcyMDU0YTE4MTIyMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XAPkcvZv-qSIdKqsBopEZ41vT0WjyH7Ucl_u_yHhBrM'
+const API_TOKEN = process.env.API_TOKEN;
 
 const API_HEADERS = {
   accept: 'application/json',
