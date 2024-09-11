@@ -18,7 +18,7 @@ type SidebarProps = {
 
 const Sidebar: React.FC<SidebarProps> = ({ categories, genres }) => {
   return (
-    <aside className='w-1/5'>
+    <aside className='w-1/6'>
       <nav className='flex flex-col text-white gap-2.5 p-8'>
         {categories.map((category) => {
           return <Link key={category.name} href={category.href}>{category.name}</Link>

@@ -1,7 +1,4 @@
-type Genre = {
-  id: number;
-  name: string;
-};
+import { Genre } from "@/types/genre";
 
 const API_PATH = "https://api.themoviedb.org/3/"
 const API_TOKEN = process.env.API_TOKEN;
@@ -62,4 +59,15 @@ export const fetchGenreNameById = async (genreId: string): Promise<string | unde
 
   const genre = data.genres.find((g: Genre) => g.id === Number(genreId));
   return genre ? genre.name : undefined;
+};
+
+export const fetchMovieById = async (movieId: string) => {
+  const url = `${API_PATH}movie/${movieId}?language=fr`;
+  const options = {
+    method: 'GET',
+    headers: API_HEADERS
+  };
+
+  const res = await fetch(url, options);
+  return res.json();
 };

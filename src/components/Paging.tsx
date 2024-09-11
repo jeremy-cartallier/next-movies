@@ -21,12 +21,12 @@ const Paging:React.FC<PagingProps> = ({totalPages, category, page, type}) => {
 
 
   return (
-    <div className='flex justify-between'>
+    <div className='flex justify-between h-6 relative'>
       {
-        Number(page) > 1 && <Link href={getLinkHref(Number(page) - 1)}>Page {Number(page) - 1}</Link>
+        Number(page) > 1 && <Link className="absolute left-0" href={getLinkHref(Number(page) - 1)}>Page {Number(page) - 1}</Link>
       }
       {
-        Number(page) < totalPages && <Link href={getLinkHref(Number(page) + 1)}>Page {Number(page) + 1}</Link>
+        Number(page) < totalPages && <Link className="absolute right-0" href={getLinkHref(Number(page) + 1)}>Page {Number(page) + 1}</Link>
       }
     </div>
   )
