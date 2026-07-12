@@ -29,7 +29,7 @@ export default async function RootLayout({
 
   const data = await fetchGenreName();
 
-  const genres = data.genres;
+  const genres = data?.genres ?? [];
 
   const categories = [
     {
@@ -56,7 +56,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header/>
-        <div className="flex bg-foreground">
+        <div className="flex min-h-[calc(100vh-73px)]">
           <Sidebar categories={categories} genres={genres}></Sidebar>
           {children}
         </div>
